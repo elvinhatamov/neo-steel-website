@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../assets/logo/logo.png';
 import './Navigation.css';
 
 const Navigation = () => {
@@ -26,8 +27,9 @@ const Navigation = () => {
   return (
     <nav className={`navigation ${isScrolled ? 'scrolled' : ''}`}>
       <div className="nav-container">
-        <Link to="/" className="nav-logo">
+        <Link to="/" className="nav-logo" aria-label="Neo Steel LTD">
           <div className="logo-content">
+            <img src={logo} alt="Neo Steel LTD logo" className="logo-image" />
             <div className="logo-text">
               <span className="logo-main">NEO STEEL LTD</span>
               <span className="logo-tagline">FROM BLUEPRINT TO BRILLIANCE</span>

@@ -6,12 +6,16 @@ const Contact = () => {
     {
       icon: <FaPhone />,
       title: "Phone",
-      details: ["+1 (555) 123-4567", "+1 (555) 987-6543"]
+      details: [
+        <a href="tel:+15488816904">+1 (548) 881-6904</a>
+      ]
     },
     {
       icon: <FaEnvelope />,
       title: "Email",
-      details: ["info@neosteel.com", "quotes@neosteel.com"]
+      details: [
+        <a href="mailto:elnuradam701@gmail.com">info@neosteel.ca</a>
+      ]
     },
     {
       icon: <FaMapMarkerAlt />,
