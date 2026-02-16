@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import heroVideo from '../assets/logo/VIDEO.mp4';
+import heroVideo from '../assets/logo/video_home.mp4';
 import './Hero.css';
 
 const Hero = () => {
