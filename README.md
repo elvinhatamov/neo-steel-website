@@ -2,6 +2,30 @@
 
 A modern, professional React-based static website for NEO STEEL LTD, showcasing 15 years of excellence in steel fabrication and construction services.
 
+---
+
+## ⚡ Quick Start - How to View the Website
+
+**👉 [Complete Step-by-Step Guide](./HOW-TO-VIEW.md)** - Perfect for beginners!
+
+**Or, for experienced developers:**
+
+```bash
+# 1. Install dependencies (only needed first time)
+npm install
+
+# 2. Start the development server
+npm run dev
+```
+
+Then open **http://localhost:5173** in your browser 🎉
+
+![Website Running](https://github.com/user-attachments/assets/9ba844f1-7b90-41d5-b43f-c0ce8e981b01)
+
+> **Note**: Make sure you have Node.js (v16+) installed. Check with `node --version`
+
+---
+
 ## 🚀 Features
 
 - **Modern Design**: Professional, clean aesthetic suitable for the steel industry
@@ -136,6 +160,71 @@ npm run lint
 - **Tagline**: FROM BLUEPRINT TO BRILLIANCE
 - **Experience**: 15 Years in the steel industry
 - **Focus**: Quality, precision, and innovation
+
+## 🚀 Deployment
+
+### Deploy to Netlify
+
+1. Build the project:
+```bash
+npm run build
+```
+
+2. Deploy the `dist` folder to Netlify:
+   - Drag and drop the `dist` folder to [Netlify Drop](https://app.netlify.com/drop)
+   - Or use Netlify CLI: `netlify deploy --prod --dir=dist`
+
+### Deploy to Vercel
+
+```bash
+npm install -g vercel
+vercel --prod
+```
+
+### Deploy to GitHub Pages
+
+1. Update `vite.config.js` to set the base path:
+```js
+export default defineConfig({
+  base: '/neo-steel-website/',
+  // ... rest of config
+})
+```
+
+2. Build and deploy:
+```bash
+npm run build
+npx gh-pages -d dist
+```
+
+### Deploy to Any Static Host
+
+After running `npm run build`, upload the contents of the `dist` folder to any static hosting service (AWS S3, Azure Static Web Apps, Google Cloud Storage, etc.).
+
+## 🔧 Troubleshooting
+
+### Port Already in Use
+
+If port 5173 is already in use, Vite will automatically use the next available port. Check the terminal output for the actual URL.
+
+### Dependencies Installation Issues
+
+If you encounter issues with `npm install`, try:
+```bash
+# Clear npm cache
+npm cache clean --force
+
+# Remove node_modules and reinstall
+rm -rf node_modules package-lock.json
+npm install
+```
+
+### Build Errors
+
+Make sure you're using Node.js v16 or higher:
+```bash
+node --version
+```
 
 ## 📄 License
 
