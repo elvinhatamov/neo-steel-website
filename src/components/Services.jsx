@@ -50,7 +50,7 @@ const Services = () => {
               <div className="service-icon">{service.icon}</div>
               <h3>{service.title}</h3>
               <p>{service.description}</p>
-              <button className="service-link">Learn More →</button>
+              <button className="service-link" aria-label={`Learn more about ${service.title}`}>Learn More →</button>
             </div>
           ))}
         </div>

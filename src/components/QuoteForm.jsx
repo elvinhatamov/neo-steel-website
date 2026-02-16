@@ -69,7 +69,6 @@ const QuoteForm = () => {
     
     if (Object.keys(newErrors).length === 0) {
       // Form is valid - in a real application, you would send this to a server
-      console.log('Form submitted:', formData);
       setIsSubmitted(true);
       
       // Reset form after 3 seconds

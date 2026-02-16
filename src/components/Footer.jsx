@@ -58,10 +58,10 @@ const Footer = () => {
                 <li>Email: info@neosteel.com</li>
               </ul>
               <div className="social-links">
-                <a href="#" aria-label="Facebook"><FaFacebookF /></a>
-                <a href="#" aria-label="Twitter"><FaTwitter /></a>
-                <a href="#" aria-label="LinkedIn"><FaLinkedinIn /></a>
-                <a href="#" aria-label="Instagram"><FaInstagram /></a>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><FaFacebookF /></a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><FaTwitter /></a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><FaLinkedinIn /></a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><FaInstagram /></a>
               </div>
             </div>
           </div>
