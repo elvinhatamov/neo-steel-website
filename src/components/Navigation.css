@@ -134,9 +134,14 @@
   width: 100%;
 }
 
-.nav-cta button {
+.nav-cta .nav-cta-link {
   padding: 10px 25px;
   font-size: 0.95rem;
+  color: #fff;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Responsive */
@@ -171,7 +176,7 @@
     width: 100%;
   }
 
-  .nav-cta button {
+  .nav-cta .nav-cta-link {
     width: 100%;
   }
 

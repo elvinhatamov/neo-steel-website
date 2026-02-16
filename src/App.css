@@ -9,3 +9,9 @@ main {
   padding-top: 80px; /* Account for fixed navigation */
 }
 
+.page-cta {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px 60px;
+}
+

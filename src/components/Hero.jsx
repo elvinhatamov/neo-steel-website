@@ -1,15 +1,19 @@
+import { Link } from 'react-router-dom';
+import heroVideo from '../assets/logo/VIDEO.mp4';
 import './Hero.css';
 
 const Hero = () => {
-  const scrollToQuote = () => {
-    const element = document.getElementById('quote');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <section id="hero" className="hero">
+      <video
+        className="hero-video"
+        autoPlay
+        muted
+        loop
+        playsInline
+      >
+        <source src={heroVideo} type="video/mp4" />
+      </video>
       <div className="hero-overlay"></div>
       <div className="hero-content">
         <div className="hero-badge">15 Years of Experience</div>
@@ -21,12 +25,12 @@ const Hero = () => {
           Delivering excellence in every project with precision, quality, and dedication.
         </p>
         <div className="hero-cta">
-          <button className="btn btn-primary" onClick={scrollToQuote}>
+          <Link to="/quote" className="btn btn-primary">
             Get a Quote
-          </button>
-          <a href="#about" className="btn btn-secondary">
+          </Link>
+          <Link to="/about" className="btn btn-secondary">
             Learn More
-          </a>
+          </Link>
         </div>
       </div>
     </section>

@@ -1,15 +1,9 @@
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import './Footer.css';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <footer className="footer">
@@ -30,22 +24,22 @@ const Footer = () => {
             <div className="footer-column">
               <h4>Quick Links</h4>
               <ul className="footer-links">
-                <li><a href="#hero" onClick={() => scrollToSection('hero')}>Home</a></li>
-                <li><a href="#about" onClick={() => scrollToSection('about')}>About Us</a></li>
-                <li><a href="#services" onClick={() => scrollToSection('services')}>Services</a></li>
-                <li><a href="#gallery" onClick={() => scrollToSection('gallery')}>Gallery</a></li>
-                <li><a href="#contact" onClick={() => scrollToSection('contact')}>Contact</a></li>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/about">About Us</Link></li>
+                <li><Link to="/services">Services</Link></li>
+                <li><Link to="/gallery">Gallery</Link></li>
+                <li><Link to="/contact">Contact</Link></li>
               </ul>
             </div>
 
             <div className="footer-column">
               <h4>Services</h4>
               <ul className="footer-links">
-                <li><a href="#services">Steel Fabrication</a></li>
-                <li><a href="#services">Structural Steel</a></li>
-                <li><a href="#services">Metal Working</a></li>
-                <li><a href="#services">On-Site Installation</a></li>
-                <li><a href="#services">Custom Design</a></li>
+                <li><Link to="/services">Steel Fabrication</Link></li>
+                <li><Link to="/services">Structural Steel</Link></li>
+                <li><Link to="/services">Metal Working</Link></li>
+                <li><Link to="/services">On-Site Installation</Link></li>
+                <li><Link to="/services">Custom Design</Link></li>
               </ul>
             </div>
 

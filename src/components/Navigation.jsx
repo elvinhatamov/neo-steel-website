@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import logo from '../assets/logo/logo.png';
 import './Navigation.css';
 
@@ -16,13 +16,11 @@ const Navigation = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsMobileMenuOpen(false);
-    }
-  };
+  const location = useLocation();
+
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [location.pathname]);
 
   return (
     <nav className={`navigation ${isScrolled ? 'scrolled' : ''}`}>
@@ -48,18 +46,19 @@ const Navigation = () => {
         </button>
 
         <ul className={`nav-links ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
-          <li><a href="#hero" onClick={() => scrollToSection('hero')}>Home</a></li>
-          <li><a href="#about" onClick={() => scrollToSection('about')}>About</a></li>
-          <li><a href="#services" onClick={() => scrollToSection('services')}>Services</a></li>
-          <li><a href="#gallery" onClick={() => scrollToSection('gallery')}>Gallery</a></li>
-          <li><a href="#contact" onClick={() => scrollToSection('contact')}>Contact</a></li>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/about">About</Link></li>
+          <li><Link to="/services">Services</Link></li>
+          <li><Link to="/gallery">Gallery</Link></li>
+          <li><Link to="/contact">Contact</Link></li>
           <li className="nav-cta">
-            <button 
-              className="btn btn-primary"
-              onClick={() => scrollToSection('quote')}
+            <Link 
+              to="/quote"
+              className="btn btn-primary nav-cta-link"
+              onClick={() => setIsMobileMenuOpen(false)}
             >
               Get a Quote
-            </button>
+            </Link>
           </li>
         </ul>
       </div>
