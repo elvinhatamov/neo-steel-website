@@ -1,0 +1,168 @@
+.quote-form-section {
+  background-color: var(--white);
+}
+
+.quote-intro {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 50px;
+  font-size: 1.1rem;
+  color: var(--text-light);
+  line-height: 1.8;
+}
+
+.quote-form {
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--light-gray);
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 25px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 12px 15px;
+  border: 2px solid var(--light-gray);
+  border-radius: 5px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+  background-color: white;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--accent-blue);
+}
+
+.form-group input.error,
+.form-group select.error,
+.form-group textarea.error {
+  border-color: #e74c3c;
+}
+
+.error-message {
+  color: #e74c3c;
+  font-size: 0.875rem;
+  margin-top: 5px;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.1rem;
+  margin-top: 10px;
+}
+
+.success-message {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  background: var(--light-gray);
+  padding: 60px 40px;
+  border-radius: 10px;
+  animation: fadeInScale 0.5s ease;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.success-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, var(--accent-blue), var(--secondary-blue));
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  margin: 0 auto 20px;
+  animation: scaleIn 0.5s ease 0.2s both;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.success-message h3 {
+  color: var(--primary-blue);
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.success-message p {
+  color: var(--text-light);
+  font-size: 1.1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .quote-form {
+    padding: 30px 20px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .success-message {
+    padding: 40px 30px;
+  }
+
+  .success-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+  }
+
+  .success-message h3 {
+    font-size: 1.5rem;
+  }
+
+  .success-message p {
+    font-size: 1rem;
+  }
+}
