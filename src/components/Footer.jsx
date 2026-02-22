@@ -16,7 +16,7 @@ const Footer = () => {
                 <p className="footer-tagline">FROM BLUEPRINT TO BRILLIANCE</p>
               </div>
               <p className="footer-description">
-                With 15 years of excellence in steel fabrication and construction, 
+                With 20 years of excellence in steel fabrication and construction, 
                 we deliver quality solutions that stand the test of time.
               </p>
             </div>
