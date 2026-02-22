@@ -5,23 +5,23 @@ const About = () => {
   const values = [
     {
       icon: <FaAward />,
-      title: "Excellence",
-      description: "Committed to delivering the highest quality in every project"
+      title: "Safety",
+      description: "Committed to a zero-incident culture through strict safety standards, training, and accountability."
     },
     {
       icon: <FaHandshake />,
-      title: "Integrity",
-      description: "Building lasting relationships through trust and transparency"
+      title: "Precision",
+      description: "Delivering accurate fabrication and seamless fit-up through disciplined detailing and quality control."
     },
     {
       icon: <FaCog />,
-      title: "Innovation",
-      description: "Leveraging cutting-edge technology and modern techniques"
+      title: "Integrity",
+      description: "We conduct business with transparency and accountability, building lasting partnerships through trust and consistent performance."
     },
     {
       icon: <FaCheckCircle />,
-      title: "Reliability",
-      description: "Consistent delivery on time and within budget"
+      title: "Execution",
+      description: "Through disciplined planning, precision fabrication, and coordinated field operations, we deliver structural steel projects safely, efficiently, and on schedule."
     }
   ];
 
@@ -32,11 +32,11 @@ const About = () => {
         
         <div className="about-content">
           <div className="about-text">
-            <h3>15 Years of Steel Industry Excellence</h3>
+            <h3>20 Years of Steel Industry Excellence</h3>
             <p>
-              NEO STEEL LTD has been at the forefront of the steel fabrication industry for over 15 years, 
+              NEO STEEL LTD has been at the forefront of the steel fabrication industry for over 20 years, 
               delivering exceptional solutions to our clients. Our commitment to quality, precision, and 
-              innovation has made us a trusted partner for projects of all scales.
+              innovation has made us Next-Generation Fabrication. Experienced Execution. Outstanding Quality.
             </p>
             <p>
               From blueprint to brilliance, we transform your vision into reality. Our team of skilled 
@@ -44,14 +44,15 @@ const About = () => {
               every project meets the highest standards of excellence.
             </p>
             <p>
-              Whether it's commercial construction, industrial fabrication, or custom steel solutions, 
-              NEO STEEL LTD has the expertise and resources to exceed your expectations.
+              Serving the commercial, institutional, and industrial markets, NEO STEEL LTD combines 
+              technical knowledge, precision fabrication, and disciplined field execution to deliver 
+              structural excellence on every project.
             </p>
           </div>
 
           <div className="about-stats">
             <div className="stat-item">
-              <div className="stat-number">15+</div>
+              <div className="stat-number">20+</div>
               <div className="stat-label">Years Experience</div>
             </div>
             <div className="stat-item">

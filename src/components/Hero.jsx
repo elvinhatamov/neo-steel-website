@@ -21,8 +21,7 @@ const Hero = () => {
           FROM BLUEPRINT TO BRILLIANCE
         </h1>
         <p className="hero-subtitle">
-          Your trusted partner in steel fabrication and construction solutions. 
-          Delivering excellence in every project with precision, quality, and dedication.
+          Next-Generation Fabrication. Experienced Execution. Outstanding Quality.
         </p>
         <div className="hero-cta">
           <Link to="/quote" className="btn btn-primary">

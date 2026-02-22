@@ -46,8 +46,8 @@ const Footer = () => {
             <div className="footer-column">
               <h4>Contact Info</h4>
               <ul className="footer-contact">
-                <li>123 Industrial Drive</li>
-                <li>Steel City, ST 12345</li>
+                <li>3640 Weston Road #8</li>
+                <li>North York, ON M9L 1W2</li>
                 <li>Phone: <a href="tel:+15488816904">+1 (548) 881-6904</a></li>
                 <li>Email: <a href="mailto:elnuradam701@gmail.com">info@neosteel.ca</a></li>
               </ul>

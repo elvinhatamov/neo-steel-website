@@ -20,7 +20,7 @@ const Contact = () => {
     {
       icon: <FaMapMarkerAlt />,
       title: "Address",
-      details: ["123 Industrial Drive", "Steel City, ST 12345"]
+      details: ["3640 Weston Road #8", "North York, ON M9L 1W2"]
     },
     {
       icon: <FaClock />,
@@ -50,16 +50,14 @@ const Contact = () => {
             ))}
           </div>
 
-          <div className="contact-map-placeholder">
-            <div className="map-content">
-              <FaMapMarkerAlt className="map-icon" />
-              <h4>Find Us</h4>
-              <p>Map Integration Placeholder</p>
-              <p className="map-note">
-                We're conveniently located in the heart of the industrial district, 
-                easily accessible from major highways.
-              </p>
-            </div>
+          <div className="contact-map">
+            <iframe
+              title="NEO STEEL LTD Location"
+              src="https://www.google.com/maps?q=3640+Weston+Road+%238,+North+York,+ON+M9L+1W2&output=embed"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            ></iframe>
           </div>
         </div>
       </div>
