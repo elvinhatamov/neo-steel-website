@@ -68,7 +68,22 @@ const QuoteForm = () => {
     const newErrors = validateForm();
     
     if (Object.keys(newErrors).length === 0) {
-      // Form is valid - in a real application, you would send this to a server
+      const recipients = 'info@neosteel.ca,estimating@neosteel.ca';
+      const subject = `Quote Request - ${formData.projectType || 'General Inquiry'}`;
+      const body = [
+        `Full Name: ${formData.name}`,
+        `Email: ${formData.email}`,
+        `Phone: ${formData.phone}`,
+        `Company: ${formData.company || 'N/A'}`,
+        `Project Type: ${formData.projectType}`,
+        `Timeline: ${formData.timeline}`,
+        '',
+        'Project Description:',
+        formData.description
+      ].join('\n');
+
+      window.location.href = `mailto:${recipients}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
       setIsSubmitted(true);
       
       // Reset form after 3 seconds
@@ -95,7 +110,7 @@ const QuoteForm = () => {
         <h2 className="section-title">Get a Quote</h2>
         <p className="quote-intro">
           Ready to start your project? Fill out the form below and our team will get back to you 
-          within 24 hours with a detailed quote.
+          within 24 hours with a detailed quote. Quote requests are sent to info@neosteel.ca and estimating@neosteel.ca.
         </p>
 
         {isSubmitted ? (

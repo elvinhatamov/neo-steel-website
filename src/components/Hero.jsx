@@ -16,7 +16,7 @@ const Hero = () => {
       </video>
       <div className="hero-overlay"></div>
       <div className="hero-content">
-        <div className="hero-badge">15 Years of Experience</div>
+        <div className="hero-badge">20 Years of Experience</div>
         <h1 className="hero-title">
           FROM BLUEPRINT TO BRILLIANCE
         </h1>

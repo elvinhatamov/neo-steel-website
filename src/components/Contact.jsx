@@ -7,14 +7,15 @@ const Contact = () => {
       icon: <FaPhone />,
       title: "Phone",
       details: [
-        <a href="tel:+15488816904">+1 (548) 881-6904</a>
+        <a href="tel:+14165097711">(416) 509-7711</a>
       ]
     },
     {
       icon: <FaEnvelope />,
       title: "Email",
       details: [
-        <a href="mailto:elnuradam701@gmail.com">info@neosteel.ca</a>
+        <a href="mailto:info@neosteel.ca">info@neosteel.ca</a>,
+        <a href="mailto:estimating@neosteel.ca">estimating@neosteel.ca</a>
       ]
     },
     {
