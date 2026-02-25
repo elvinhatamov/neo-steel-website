@@ -46,10 +46,6 @@ const Services = () => {
         <p className="services-tagline">
           Precision in Fabrication. Discipline in Execution. Strength in Every Structure.
         </p>
-        <p className="services-intro">
-          NEO STEEL LTD offers a comprehensive range of steel fabrication and construction services 
-          tailored to meet the unique needs of each project.
-        </p>
 
         <div className="services-scope">
           {serviceScope.map((item, index) => (
