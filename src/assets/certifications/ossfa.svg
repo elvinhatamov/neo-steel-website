@@ -1,0 +1,10 @@
+<svg width="560" height="420" viewBox="0 0 560 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="560" height="420" rx="18" fill="#F8FAFD"/>
+  <path d="M190 156L230 132V250H190V156Z" fill="#111827"/>
+  <path d="M236 116L278 92V250H236V116Z" fill="#3CA3C6"/>
+  <path d="M284 132L324 108V250H284V132Z" fill="#B9BDC3"/>
+  <path d="M150 266C208 248 352 248 410 266" stroke="#A7ADB5" stroke-width="6" stroke-linecap="round"/>
+  <text x="82" y="336" font-family="Arial, sans-serif" font-size="86" font-weight="800" fill="#111827">OSSFA</text>
+  <text x="128" y="370" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#111827">ONTARIO STRUCTURAL STEEL</text>
+  <text x="128" y="396" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#111827">FABRICATORS ASSOCIATION</text>
+</svg>

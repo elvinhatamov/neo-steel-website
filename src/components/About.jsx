@@ -1,26 +1,35 @@
-import { FaAward, FaHandshake, FaCog, FaCheckCircle } from 'react-icons/fa';
+import { useState } from 'react';
+import { FaAward, FaHandshake, FaCog, FaCheckCircle, FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import './About.css';
+import cwbGroupLogo from '../assets/certifications/cwb-group.svg';
+import ossfaLogo from '../assets/certifications/ossfa.svg';
 
 const About = () => {
+  const [openFaqIndex, setOpenFaqIndex] = useState(0);
+
   const values = [
     {
       icon: <FaAward />,
       title: "Safety",
+      bgClass: "value-card-safety",
       description: "Committed to a zero-incident culture through strict safety standards, training, and accountability."
     },
     {
       icon: <FaHandshake />,
       title: "Precision",
+      bgClass: "value-card-precision",
       description: "Delivering accurate fabrication and seamless fit-up through disciplined detailing and quality control."
     },
     {
       icon: <FaCog />,
       title: "Integrity",
+      bgClass: "value-card-integrity",
       description: "We conduct business with transparency and accountability, building lasting partnerships through trust and consistent performance."
     },
     {
       icon: <FaCheckCircle />,
       title: "Execution",
+      bgClass: "value-card-execution",
       description: "Through disciplined planning, precision fabrication, and coordinated field operations, we deliver structural steel projects safely, efficiently, and on schedule."
     }
   ];
@@ -78,6 +87,17 @@ const About = () => {
     }
   ];
 
+  const certifications = [
+    {
+      name: 'CWB Group',
+      logo: cwbGroupLogo
+    },
+    {
+      name: 'Ontario Structural Steel Fabricators Association (OSSFA)',
+      logo: ossfaLogo
+    }
+  ];
+
   return (
     <section id="about" className="section about">
       <div className="container">
@@ -121,7 +141,7 @@ const About = () => {
 
         <div className="values-grid">
           {values.map((value, index) => (
-            <div key={index} className="value-card">
+            <div key={index} className={`value-card ${value.bgClass}`}>
               <div className="value-icon">{value.icon}</div>
               <h4>{value.title}</h4>
               <p>{value.description}</p>
@@ -129,13 +149,32 @@ const About = () => {
           ))}
         </div>
 
+        <div className="about-certifications">
+          <h3 className="certifications-title">Certifications</h3>
+          <div className="certifications-grid">
+            {certifications.map((item, index) => (
+              <div key={index} className="certification-card">
+                <img src={item.logo} alt={item.name} />
+              </div>
+            ))}
+          </div>
+        </div>
+
         <div className="about-faq">
           <h3 className="faq-title">Frequently Asked Questions</h3>
           <div className="faq-list">
             {faqs.map((faq, index) => (
-              <div key={index} className="faq-item">
-                <h4>{faq.question}</h4>
-                <p>{faq.answer}</p>
+              <div key={index} className={`faq-item ${openFaqIndex === index ? 'faq-item-open' : ''}`}>
+                <button
+                  className="faq-question"
+                  type="button"
+                  onClick={() => setOpenFaqIndex(openFaqIndex === index ? -1 : index)}
+                  aria-expanded={openFaqIndex === index}
+                >
+                  <span>{faq.question.replace(/^\d+\.\s*/, '')}</span>
+                  {openFaqIndex === index ? <FaChevronUp /> : <FaChevronDown />}
+                </button>
+                {openFaqIndex === index && <p className="faq-answer">{faq.answer}</p>}
               </div>
             ))}
           </div>

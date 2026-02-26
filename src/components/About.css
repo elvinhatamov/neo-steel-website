@@ -69,6 +69,40 @@
   text-align: center;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.value-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.9);
+  z-index: 0;
+}
+
+.value-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.value-card-safety {
+  background-image: url('../assets/about/safety-bg.svg');
+}
+
+.value-card-precision {
+  background-image: url('../assets/about/precision-bg.svg');
+}
+
+.value-card-integrity {
+  background-image: url('../assets/about/integrity-bg.svg');
+}
+
+.value-card-execution {
+  background-image: url('../assets/about/execution-bg.svg');
 }
 
 .value-card:hover {
@@ -98,36 +132,87 @@
   margin-top: 60px;
 }
 
-.faq-title {
+.about-certifications {
+  margin-top: 60px;
+}
+
+.certifications-title {
   font-size: 2rem;
   color: var(--primary-blue);
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
+}
+
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.certification-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 190px;
+}
+
+.certification-card img {
+  max-width: 100%;
+  max-height: 150px;
+  object-fit: contain;
+}
+
+.faq-title {
+  font-size: 2.3rem;
+  color: var(--text-dark);
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 36px;
+  letter-spacing: 1px;
 }
 
 .faq-list {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 18px;
+  gap: 14px;
 }
 
 .faq-item {
-  background: white;
-  border-radius: 10px;
-  padding: 24px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  background: var(--white);
+  border-radius: 4px;
+  padding: 0;
 }
 
-.faq-item h4 {
+.faq-question {
+  width: 100%;
+  border: none;
+  background: transparent;
+  color: var(--text-dark);
+  text-align: left;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.faq-question svg {
+  font-size: 1.7rem;
+  color: var(--text-dark);
+  flex-shrink: 0;
+}
+
+.faq-answer {
   font-size: 1.1rem;
-  color: var(--primary-blue);
-  margin-bottom: 10px;
-}
-
-.faq-item p {
-  font-size: 1rem;
   color: var(--text-dark);
   line-height: 1.7;
+  padding: 0 30px 30px;
 }
 
 .faq-cta {
@@ -165,21 +250,36 @@
     margin-top: 40px;
   }
 
-  .faq-title {
+  .about-certifications {
+    margin-top: 40px;
+  }
+
+  .certifications-title {
     font-size: 1.6rem;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
   }
 
-  .faq-item {
-    padding: 20px;
+  .certifications-grid {
+    grid-template-columns: 1fr;
   }
 
-  .faq-item h4 {
-    font-size: 1rem;
+  .faq-title {
+    font-size: 1.7rem;
+    margin-bottom: 22px;
   }
 
-  .faq-item p {
+  .faq-question {
+    font-size: 1.4rem;
+    padding: 22px 20px;
+  }
+
+  .faq-question svg {
+    font-size: 1.2rem;
+  }
+
+  .faq-answer {
     font-size: 0.95rem;
+    padding: 0 20px 22px;
   }
 
   .faq-cta {
