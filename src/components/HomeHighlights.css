@@ -1,0 +1,134 @@
+.home-highlights {
+  background: var(--light-gray);
+  padding-top: 0;
+}
+
+.mission-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: -120px;
+  position: relative;
+  z-index: 3;
+}
+
+.mission-card {
+  background: var(--white);
+  border-radius: 6px;
+  padding: 26px 24px;
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.14);
+}
+
+.mission-card h3 {
+  text-transform: uppercase;
+  font-size: 2rem;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+}
+
+.mission-card p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.home-summary-head {
+  text-align: center;
+  max-width: 980px;
+  margin: 80px auto 42px;
+}
+
+.home-summary-head p {
+  margin-bottom: 10px;
+}
+
+.home-summary-head h2 {
+  text-transform: uppercase;
+  color: var(--text-dark);
+  font-size: 3.2rem;
+}
+
+.page-links-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.page-link-card {
+  background: var(--white);
+}
+
+.page-link-image {
+  width: 100%;
+  height: 290px;
+  object-fit: cover;
+  display: block;
+}
+
+.page-link-content {
+  padding: 22px 22px 26px;
+}
+
+.page-link-content h3 {
+  text-transform: uppercase;
+  color: var(--text-dark);
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+}
+
+.page-link-content p {
+  margin-bottom: 20px;
+  line-height: 1.55;
+}
+
+.page-link-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #111;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 3px;
+  font-weight: 700;
+}
+
+.page-link-btn:hover {
+  color: #fff;
+  background: #2a2a2a;
+}
+
+@media (max-width: 1024px) {
+  .mission-card h3 {
+    font-size: 1.6rem;
+  }
+
+  .home-summary-head h2 {
+    font-size: 2.4rem;
+  }
+
+  .page-link-content h3 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .mission-grid {
+    grid-template-columns: 1fr;
+    margin-top: -40px;
+  }
+
+  .home-summary-head {
+    margin: 46px auto 28px;
+  }
+
+  .home-summary-head h2 {
+    font-size: 1.8rem;
+  }
+
+  .page-links-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-link-image {
+    height: 220px;
+  }
+}

@@ -1,0 +1,38 @@
+.faq-page {
+  background: var(--light-gray);
+}
+
+.faq-list {
+  max-width: 980px;
+  margin: 0 auto;
+  display: grid;
+  gap: 16px;
+}
+
+.faq-item {
+  background: var(--white);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  padding: 22px;
+}
+
+.faq-item h3 {
+  color: var(--primary-blue);
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.faq-item p {
+  margin: 0;
+  line-height: 1.65;
+}
+
+@media (max-width: 768px) {
+  .faq-item {
+    padding: 18px;
+  }
+
+  .faq-item h3 {
+    font-size: 1.05rem;
+  }
+}

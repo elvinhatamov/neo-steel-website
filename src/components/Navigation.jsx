@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import logo from '../assets/logo/logo.png';
 import './Navigation.css';
 
@@ -17,6 +17,14 @@ const Navigation = () => {
   }, []);
 
   const location = useLocation();
+
+  const navItems = [
+    { label: 'About', to: '/about' },
+    { label: 'Services', to: '/services' },
+    { label: 'Projects', to: '/gallery' },
+    { label: 'Frequently Asked Questions', to: '/faq' },
+    { label: 'Contact', to: '/contact' }
+  ];
 
   useEffect(() => {
     setIsMobileMenuOpen(false);
@@ -46,18 +54,23 @@ const Navigation = () => {
         </button>
 
         <ul className={`nav-links ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/services">Services</Link></li>
-          <li><Link to="/gallery">Gallery</Link></li>
-          <li><Link to="/contact">Contact</Link></li>
+          {navItems.map((item) => (
+            <li key={`${item.label}-${item.to}`}>
+              <NavLink
+                to={item.to}
+                className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+              >
+                {item.label}
+              </NavLink>
+            </li>
+          ))}
           <li className="nav-cta">
             <Link 
               to="/quote"
-              className="btn btn-primary nav-cta-link"
+              className="nav-cta-link"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Get a Quote
+              Request a Quote
             </Link>
           </li>
         </ul>
