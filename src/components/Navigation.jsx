@@ -22,7 +22,7 @@ const Navigation = () => {
     { label: 'About', to: '/about' },
     { label: 'Services', to: '/services' },
     { label: 'Projects', to: '/gallery' },
-    { label: 'Frequently Asked Questions', to: '/faq' },
+    { label: 'FAQ', to: '/faq' },
     { label: 'Contact', to: '/contact' }
   ];
 

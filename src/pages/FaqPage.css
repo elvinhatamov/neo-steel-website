@@ -13,26 +13,55 @@
   background: var(--white);
   border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 8px;
-  padding: 22px;
+  overflow: hidden;
 }
 
-.faq-item h3 {
+.faq-question {
+  width: 100%;
+  border: none;
+  background: transparent;
+  text-align: left;
+  padding: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  cursor: pointer;
+}
+
+.faq-question h3 {
   color: var(--primary-blue);
   font-size: 1.2rem;
-  margin-bottom: 8px;
+  margin: 0;
 }
 
-.faq-item p {
+.faq-question svg {
+  color: var(--medium-gray);
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.faq-answer {
   margin: 0;
+  padding: 0 22px 22px;
   line-height: 1.65;
+  color: var(--text-dark);
+}
+
+.faq-item-open {
+  border-color: var(--silver);
 }
 
 @media (max-width: 768px) {
-  .faq-item {
+  .faq-question {
     padding: 18px;
   }
 
-  .faq-item h3 {
+  .faq-question h3 {
     font-size: 1.05rem;
+  }
+
+  .faq-answer {
+    padding: 0 18px 18px;
   }
 }

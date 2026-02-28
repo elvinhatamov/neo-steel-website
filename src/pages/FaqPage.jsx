@@ -1,3 +1,5 @@
+import { useState } from 'react';
+import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import './FaqPage.css';
 
 const faqItems = [
@@ -54,16 +56,26 @@ const faqItems = [
 ];
 
 const FaqPage = () => {
+  const [openFaqIndex, setOpenFaqIndex] = useState(0);
+
   return (
     <section className="section faq-page">
       <div className="container">
         <h2 className="section-title">Frequently Asked Questions</h2>
 
         <div className="faq-list">
-          {faqItems.map((item) => (
-            <article key={item.question} className="faq-item">
-              <h3>{item.question}</h3>
-              <p>{item.answer}</p>
+          {faqItems.map((item, index) => (
+            <article key={item.question} className={`faq-item ${openFaqIndex === index ? 'faq-item-open' : ''}`}>
+              <button
+                className="faq-question"
+                type="button"
+                onClick={() => setOpenFaqIndex(openFaqIndex === index ? -1 : index)}
+                aria-expanded={openFaqIndex === index}
+              >
+                <h3>{item.question}</h3>
+                {openFaqIndex === index ? <FaChevronUp /> : <FaChevronDown />}
+              </button>
+              {openFaqIndex === index && <p className="faq-answer">{item.answer}</p>}
             </article>
           ))}
         </div>
