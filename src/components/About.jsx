@@ -18,6 +18,16 @@ const About = () => {
       title: 'Our Strategy',
       description:
         'NEO STEEL LTD operates on a fully integrated model. By housing detailing, fabrication, project management, and field operations within one coordinated structure, we eliminate unnecessary handoffs and reduce project risk. Our strategy focuses on: constructability-driven design coordination, precision fabrication aligned with schedule demands, proactive site planning and trade integration, and clear communication with all project stakeholders.'
+    },
+    {
+      title: 'Our Tactics',
+      description:
+        'To execute our strategy effectively, we rely on disciplined operational practices: advanced 3D modeling and coordinated steel detailing, strict quality control and inspection procedures, structured production planning and logistics management, and safety-driven field execution. Continuous review of constructability and efficiency helps us transform drawings into reality with precision and accountability.'
+    },
+    {
+      title: 'Customer Satisfaction',
+      description:
+        'At NEO STEEL LTD, customer satisfaction is built on performance, not promises. We understand the pressures faced by general contractors, developers, and project managers, so our team proactively solves challenges early, communicates clearly, and delivers results that meet or exceed expectations. Our goal is to complete every project and become a long-term steel partner our clients can rely on for future work.'
     }
   ];
 
