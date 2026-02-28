@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FaAward, FaHandshake, FaCog, FaCheckCircle, FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import './About.css';
 import cwbGroupLogo from '../assets/certifications/cwb-group.svg';
 import ossfaLogo from '../assets/certifications/ossfa.svg';
@@ -7,30 +7,21 @@ import ossfaLogo from '../assets/certifications/ossfa.svg';
 const About = () => {
   const [openFaqIndex, setOpenFaqIndex] = useState(0);
 
-  const values = [
+  const missionCards = [
     {
-      icon: <FaAward />,
-      title: "Safety",
-      bgClass: "value-card-safety",
-      description: "Committed to a zero-incident culture through strict safety standards, training, and accountability."
+      title: 'Our Vision',
+      description:
+        'To be a trusted leader in structural steel solutions across the commercial, institutional, and industrial sectors — recognized for technical precision, disciplined execution, and long-term partnerships built on performance. We aim to elevate industry standards by delivering steel structures that combine strength, efficiency, and lasting value.'
     },
     {
-      icon: <FaHandshake />,
-      title: "Precision",
-      bgClass: "value-card-precision",
-      description: "Delivering accurate fabrication and seamless fit-up through disciplined detailing and quality control."
+      title: 'Our Mission',
+      description:
+        'Our mission is to provide integrated structural steel services — from detailing and engineering coordination through fabrication and erection — with full accountability and uncompromising quality. We are committed to delivering projects safely, on schedule, and to specification while maintaining transparent communication and strong collaboration with our clients and partners.'
     },
     {
-      icon: <FaCog />,
-      title: "Integrity",
-      bgClass: "value-card-integrity",
-      description: "We conduct business with transparency and accountability, building lasting partnerships through trust and consistent performance."
-    },
-    {
-      icon: <FaCheckCircle />,
-      title: "Execution",
-      bgClass: "value-card-execution",
-      description: "Through disciplined planning, precision fabrication, and coordinated field operations, we deliver structural steel projects safely, efficiently, and on schedule."
+      title: 'Our Strategy',
+      description:
+        'NEO STEEL LTD operates on a fully integrated model. By housing detailing, fabrication, project management, and field operations within one coordinated structure, we eliminate unnecessary handoffs and reduce project risk. Our strategy focuses on: constructability-driven design coordination, precision fabrication aligned with schedule demands, proactive site planning and trade integration, and clear communication with all project stakeholders.'
     }
   ];
 
@@ -139,13 +130,12 @@ const About = () => {
           </div>
         </div>
 
-        <div className="values-grid">
-          {values.map((value, index) => (
-            <div key={index} className={`value-card ${value.bgClass}`}>
-              <div className="value-icon">{value.icon}</div>
-              <h4>{value.title}</h4>
-              <p>{value.description}</p>
-            </div>
+        <div className="about-mission-grid">
+          {missionCards.map((card) => (
+            <article key={card.title} className="about-mission-card">
+              <h3>{card.title}</h3>
+              <p>{card.description}</p>
+            </article>
           ))}
         </div>
 

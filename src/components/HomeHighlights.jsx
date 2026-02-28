@@ -1,24 +1,38 @@
 import { Link } from 'react-router-dom';
+import { FaAward, FaHandshake, FaCog, FaCheckCircle } from 'react-icons/fa';
 import serviceImageOne from '../assets/services/image1.png';
 import serviceImageTwo from '../assets/services/image2.png';
 import homeBackdrop from '../assets/logo/home_backend.png';
 import './HomeHighlights.css';
 
-const missionCards = [
+const values = [
   {
-    title: 'Our Vision',
+    icon: <FaAward />,
+    title: 'Safety',
+    bgClass: 'home-value-card-safety',
     description:
-      'To be a trusted leader in structural steel solutions across the commercial, institutional, and industrial sectors — recognized for technical precision, disciplined execution, and long-term partnerships built on performance. We aim to elevate industry standards by delivering steel structures that combine strength, efficiency, and lasting value.'
+      'Committed to a zero-incident culture through strict safety standards, training, and accountability.'
   },
   {
-    title: 'Our Mission',
+    icon: <FaHandshake />,
+    title: 'Precision',
+    bgClass: 'home-value-card-precision',
     description:
-      'Our mission is to provide integrated structural steel services — from detailing and engineering coordination through fabrication and erection — with full accountability and uncompromising quality. We are committed to delivering projects safely, on schedule, and to specification while maintaining transparent communication and strong collaboration with our clients and partners.'
+      'Delivering accurate fabrication and seamless fit-up through disciplined detailing and quality control.'
   },
   {
-    title: 'Our Strategy',
+    icon: <FaCog />,
+    title: 'Integrity',
+    bgClass: 'home-value-card-integrity',
     description:
-      'NEO STEEL LTD operates on a fully integrated model. By housing detailing, fabrication, project management, and field operations within one coordinated structure, we eliminate unnecessary handoffs and reduce project risk. Our strategy focuses on: constructability-driven design coordination, precision fabrication aligned with schedule demands, proactive site planning and trade integration, and clear communication with all project stakeholders.'
+      'We conduct business with transparency and accountability, building lasting partnerships through trust and consistent performance.'
+  },
+  {
+    icon: <FaCheckCircle />,
+    title: 'Execution',
+    bgClass: 'home-value-card-execution',
+    description:
+      'Through disciplined planning, precision fabrication, and coordinated field operations, we deliver structural steel projects safely, efficiently, and on schedule.'
   }
 ];
 
@@ -50,11 +64,12 @@ const HomeHighlights = () => {
   return (
     <section className="home-highlights section">
       <div className="container">
-        <div className="mission-grid">
-          {missionCards.map((card) => (
-            <article key={card.title} className="mission-card">
-              <h3>{card.title}</h3>
-              <p>{card.description}</p>
+        <div className="home-values-grid">
+          {values.map((value, index) => (
+            <article key={index} className={`home-value-card ${value.bgClass}`}>
+              <div className="home-value-icon">{value.icon}</div>
+              <h3>{value.title}</h3>
+              <p>{value.description}</p>
             </article>
           ))}
         </div>
