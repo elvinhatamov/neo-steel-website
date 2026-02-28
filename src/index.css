@@ -6,16 +6,16 @@
 
 :root {
   /* Color Palette - Industrial/Metallic Theme */
-  --primary-blue: #1f2328;
-  --secondary-blue: #3a424b;
-  --accent-blue: #6b7580;
-  --dark-gray: #111418;
-  --medium-gray: #767f88;
-  --light-gray: #eef1f4;
-  --silver: #c2c7cd;
+  --primary-blue: #1e1e1f;
+  --secondary-blue: #34373c;
+  --accent-blue: #575c63;
+  --dark-gray: #101113;
+  --medium-gray: #6c7077;
+  --light-gray: #f3f4f6;
+  --silver: #d1d5db;
   --white: #ffffff;
-  --text-dark: #1d2228;
-  --text-light: #5f6872;
+  --text-dark: #181a1d;
+  --text-light: #5b6068;
   
   /* Typography */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

@@ -30,29 +30,33 @@
 }
 
 .stat-item {
-  background: white;
-  padding: 30px;
+  background: var(--white);
+  padding: 34px 30px;
   border-radius: 10px;
   text-align: center;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--silver);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .stat-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
 }
 
 .stat-number {
   font-size: 3rem;
   font-weight: 800;
-  color: var(--accent-blue);
-  margin-bottom: 10px;
+  letter-spacing: 0.02em;
+  color: var(--text-dark);
+  margin-bottom: 12px;
 }
 
 .stat-label {
-  font-size: 1rem;
-  color: var(--text-light);
+  font-size: 0.98rem;
+  color: var(--medium-gray);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   font-weight: 600;
 }
 
