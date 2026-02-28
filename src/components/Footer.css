@@ -41,6 +41,35 @@
   font-size: 0.95rem;
 }
 
+.footer-certifications {
+  margin-top: 16px;
+}
+
+.footer-certifications-label {
+  display: block;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--light-gray);
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.footer-certifications-icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-certification-icon {
+  width: 54px;
+  height: 30px;
+  object-fit: contain;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  padding: 4px 6px;
+}
+
 .footer-links {
   list-style: none;
   padding: 0;

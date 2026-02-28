@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import './Footer.css';
+import cwbGroupLogo from '../assets/certifications/cwb-group.svg';
+import ossfaLogo from '../assets/certifications/ossfa.svg';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -18,6 +20,13 @@ const Footer = () => {
                 With 20 years of excellence in steel fabrication and construction, 
                 we deliver quality solutions that stand the test of time.
               </p>
+              <div className="footer-certifications" aria-label="Certifications">
+                <span className="footer-certifications-label">Certifications</span>
+                <div className="footer-certifications-icons">
+                  <img src={cwbGroupLogo} alt="CWB Group certification" className="footer-certification-icon" />
+                  <img src={ossfaLogo} alt="OSSFA certification" className="footer-certification-icon" />
+                </div>
+              </div>
             </div>
 
             <div className="footer-column">
