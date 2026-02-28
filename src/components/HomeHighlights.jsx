@@ -6,19 +6,19 @@ import './HomeHighlights.css';
 
 const missionCards = [
   {
-    title: 'Our Mission',
-    description:
-      'Deliver dependable steel fabrication and installation through precision, coordination, and craftsmanship on every project.'
-  },
-  {
     title: 'Our Vision',
     description:
-      'Be the trusted structural steel partner known for disciplined execution, consistent quality, and long-term client relationships.'
+      'To be a trusted leader in structural steel solutions across the commercial, institutional, and industrial sectors — recognized for technical precision, disciplined execution, and long-term partnerships built on performance. We aim to elevate industry standards by delivering steel structures that combine strength, efficiency, and lasting value.'
   },
   {
-    title: 'Our Values',
+    title: 'Our Mission',
     description:
-      'We lead with safety, integrity, precision, and accountability while continuously improving how we build and deliver.'
+      'Our mission is to provide integrated structural steel services — from detailing and engineering coordination through fabrication and erection — with full accountability and uncompromising quality. We are committed to delivering projects safely, on schedule, and to specification while maintaining transparent communication and strong collaboration with our clients and partners.'
+  },
+  {
+    title: 'Our Strategy',
+    description:
+      'NEO STEEL LTD operates on a fully integrated model. By housing detailing, fabrication, project management, and field operations within one coordinated structure, we eliminate unnecessary handoffs and reduce project risk. Our strategy focuses on: constructability-driven design coordination, precision fabrication aligned with schedule demands, proactive site planning and trade integration, and clear communication with all project stakeholders.'
   }
 ];
 

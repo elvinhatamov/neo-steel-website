@@ -186,12 +186,13 @@ const QuoteForm = () => {
                   className={errors.projectType ? 'error' : ''}
                 >
                   <option value="">Select a service...</option>
-                  <option value="steel-fabrication">Steel Fabrication</option>
                   <option value="structural-steel">Structural Steel</option>
-                  <option value="metal-working">Metal Working</option>
-                  <option value="installation">On-Site Installation</option>
-                  <option value="custom-design">Custom Design</option>
-                  <option value="industrial">Industrial Solutions</option>
+                  <option value="aess">AESS (Architecturally Exposed Structural Steel)</option>
+                  <option value="miscellaneous-metals">Miscellaneous Metals</option>
+                  <option value="industrial-steel-structures">Industrial Steel Structures</option>
+                  <option value="design-assist-engineering-support">Design-Assist / Engineering Support</option>
+                  <option value="budget-preliminary-pricing">Budget / Preliminary Pricing</option>
+                  <option value="other">Other</option>
                 </select>
                 {errors.projectType && <span className="error-message">{errors.projectType}</span>}
               </div>

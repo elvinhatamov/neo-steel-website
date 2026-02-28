@@ -1,4 +1,3 @@
-import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import './Footer.css';
 
@@ -24,22 +23,25 @@ const Footer = () => {
             <div className="footer-column">
               <h4>Quick Links</h4>
               <ul className="footer-links">
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/about">About Us</Link></li>
+                <li><Link to="/about">About</Link></li>
                 <li><Link to="/services">Services</Link></li>
-                <li><Link to="/gallery">Gallery</Link></li>
+                <li><Link to="/gallery">Projects</Link></li>
+                <li><Link to="/faq">Frequently Asked Questions</Link></li>
                 <li><Link to="/contact">Contact</Link></li>
+                <li><Link to="/quote">Request a Quote</Link></li>
               </ul>
             </div>
 
             <div className="footer-column">
               <h4>Services</h4>
               <ul className="footer-links">
-                <li><Link to="/services">Steel Fabrication</Link></li>
-                <li><Link to="/services">Structural Steel</Link></li>
-                <li><Link to="/services">Metal Working</Link></li>
-                <li><Link to="/services">On-Site Installation</Link></li>
-                <li><Link to="/services">Custom Design</Link></li>
+                <li><Link to="/services">Detailing &amp; Engineering</Link></li>
+                <li><Link to="/services">Structural Steel Fabrication &amp; Erection</Link></li>
+                <li><Link to="/services">Project Management</Link></li>
+                <li><Link to="/services">Miscellaneous Metals</Link></li>
+                <li><Link to="/services">Estimating</Link></li>
+                <li><Link to="/services">Custom Fabrication</Link></li>
+                <li><Link to="/services">AESS</Link></li>
               </ul>
             </div>
 
@@ -52,12 +54,6 @@ const Footer = () => {
                 <li>Email: <a href="mailto:info@neosteel.ca">info@neosteel.ca</a></li>
                 <li>Email: <a href="mailto:estimating@neosteel.ca">estimating@neosteel.ca</a></li>
               </ul>
-              <div className="social-links">
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><FaFacebookF /></a>
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><FaTwitter /></a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><FaLinkedinIn /></a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><FaInstagram /></a>
-              </div>
             </div>
           </div>
         </div>

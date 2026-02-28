@@ -1,40 +1,48 @@
-import { useState } from 'react';
 import './Gallery.css';
+import work1 from '../assets/ourwork/work1.png';
+import work2 from '../assets/ourwork/work2.png';
+import work3 from '../assets/ourwork/work3.jpeg';
+import work4 from '../assets/ourwork/work4.jpeg';
+import work5 from '../assets/ourwork/work5.jpeg';
+import work6 from '../assets/ourwork/work6.png';
 
 const Gallery = () => {
-  const [selectedImage, setSelectedImage] = useState(null);
-
-  // Placeholder images - using abstract patterns that represent steel/industrial work
   const galleryItems = [
     {
       id: 1,
-      title: "Industrial Steel Framework",
-      category: "Structural"
+      title: '',
+      category: 'Our Work',
+      image: work1
     },
     {
       id: 2,
-      title: "Commercial Building Project",
-      category: "Commercial"
+      title: '',
+      category: 'Our Work',
+      image: work2
     },
     {
       id: 3,
-      title: "Custom Metal Fabrication",
-      category: "Fabrication"
+      title: '',
+      category: 'Our Work',
+      image: work3
     },
     {
       id: 4,
-      title: "Steel Bridge Construction",
-      category: "Infrastructure"
+      title: '',
+      category: 'Our Work',
+      image: work4
     },
     {
       id: 5,
-      title: "Warehouse Steel Structure",
-      category: "Industrial"
+      title: '',
+      category: 'Our Work',
+      image: work5
     },
     {
       id: 6,
-      title: "Architectural Metalwork",
-      category: "Custom"
+      title: '',
+      category: 'Our Work',
+      image: work6
     }
   ];
 
@@ -49,42 +57,25 @@ const Gallery = () => {
 
         <div className="gallery-grid">
           {galleryItems.map((item) => (
-            <div 
-              key={item.id} 
-              className="gallery-item"
-              onClick={() => setSelectedImage(item)}
-            >
+            <div key={item.id} className="gallery-item">
               <div className="gallery-image">
-                <div className="placeholder-image">
-                  <span className="placeholder-text">Project {item.id}</span>
-                </div>
+                <img
+                  src={item.image}
+                  alt={`Our work ${item.id}`}
+                  className="gallery-photo"
+                  loading="lazy"
+                  draggable={false}
+                  onContextMenu={(e) => e.preventDefault()}
+                />
               </div>
               <div className="gallery-overlay">
                 <div className="gallery-info">
-                  <h4>{item.title}</h4>
                   <span className="gallery-category">{item.category}</span>
                 </div>
               </div>
             </div>
           ))}
         </div>
-
-        {selectedImage && (
-          <div className="gallery-modal" onClick={() => setSelectedImage(null)}>
-            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-              <button className="modal-close" onClick={() => setSelectedImage(null)}>×</button>
-              <div className="modal-image">
-                <div className="placeholder-image large">
-                  <span className="placeholder-text">Project {selectedImage.id}</span>
-                </div>
-              </div>
-              <div className="modal-info">
-                <h3>{selectedImage.title}</h3>
-                <p className="modal-category">{selectedImage.category}</p>
-              </div>
-            </div>
-          </div>
-        )}
       </div>
     </section>
   );
