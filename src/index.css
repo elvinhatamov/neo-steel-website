@@ -6,16 +6,16 @@
 
 :root {
   /* Color Palette - Industrial/Metallic Theme */
-  --primary-blue: #1a3a5c;
-  --secondary-blue: #2d5f8d;
-  --accent-blue: #4a90d9;
-  --dark-gray: #2c3e50;
-  --medium-gray: #7f8c8d;
-  --light-gray: #ecf0f1;
-  --silver: #c0c0c0;
+  --primary-blue: #1f2328;
+  --secondary-blue: #3a424b;
+  --accent-blue: #6b7580;
+  --dark-gray: #111418;
+  --medium-gray: #767f88;
+  --light-gray: #eef1f4;
+  --silver: #c2c7cd;
   --white: #ffffff;
-  --text-dark: #2c3e50;
-  --text-light: #7f8c8d;
+  --text-dark: #1d2228;
+  --text-light: #5f6872;
   
   /* Typography */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -131,7 +131,7 @@ button {
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(42, 144, 217, 0.3);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
 }
 
 .btn-secondary {

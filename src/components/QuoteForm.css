@@ -61,11 +61,11 @@
 .form-group input.error,
 .form-group select.error,
 .form-group textarea.error {
-  border-color: #e74c3c;
+  border-color: #4f5660;
 }
 
 .error-message {
-  color: #e74c3c;
+  color: #4f5660;
   font-size: 0.875rem;
   margin-top: 5px;
 }
