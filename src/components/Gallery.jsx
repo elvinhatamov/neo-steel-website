@@ -1,10 +1,13 @@
 import './Gallery.css';
-import work1 from '../assets/ourwork/work1.png';
-import work2 from '../assets/ourwork/work2.png';
-import work3 from '../assets/ourwork/work3.jpeg';
-import work4 from '../assets/ourwork/work4.jpeg';
-import work5 from '../assets/ourwork/work5.jpeg';
-import work6 from '../assets/ourwork/work6.png';
+import project1 from '../assets/projects/Project 1.png';
+import project2 from '../assets/projects/Project 2.png';
+import project3 from '../assets/projects/Project 3.png';
+import project4 from '../assets/projects/Project 4.png';
+import project5 from '../assets/projects/Project 5.jpeg';
+import project6 from '../assets/projects/Project 6.jpeg';
+import project7 from '../assets/projects/Project 7.jpeg';
+import project8 from '../assets/projects/Project 8.jpeg';
+import project9 from '../assets/projects/Project 9.jpeg';
 
 const Gallery = () => {
   const galleryItems = [
@@ -12,37 +15,55 @@ const Gallery = () => {
       id: 1,
       title: '',
       category: 'Our Work',
-      image: work1
+      image: project1
     },
     {
       id: 2,
       title: '',
       category: 'Our Work',
-      image: work2
+      image: project2
     },
     {
       id: 3,
       title: '',
       category: 'Our Work',
-      image: work3
+      image: project3
     },
     {
       id: 4,
       title: '',
       category: 'Our Work',
-      image: work4
+      image: project4
     },
     {
       id: 5,
       title: '',
       category: 'Our Work',
-      image: work5
+      image: project5
     },
     {
       id: 6,
       title: '',
       category: 'Our Work',
-      image: work6
+      image: project6
+    },
+    {
+      id: 7,
+      title: '',
+      category: 'Our Work',
+      image: project7
+    },
+    {
+      id: 8,
+      title: '',
+      category: 'Our Work',
+      image: project8
+    },
+    {
+      id: 9,
+      title: '',
+      category: 'Our Work',
+      image: project9
     }
   ];
 
