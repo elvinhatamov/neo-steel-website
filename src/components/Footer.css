@@ -98,9 +98,17 @@
 }
 
 .footer-contact li {
-  color: var(--light-gray);
+  color: var(--white);
   margin-bottom: 10px;
   font-size: 0.95rem;
+}
+
+.footer-contact a {
+  color: var(--white);
+}
+
+.footer-contact a:hover {
+  color: var(--light-gray);
 }
 
 .footer-bottom {
