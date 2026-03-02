@@ -141,10 +141,6 @@ const QuoteForm = () => {
     <section id="quote" className="section quote-form-section">
       <div className="container">
         <h2 className="section-title">Get a Quote</h2>
-        <p className="quote-intro">
-          Ready to start your project? Fill out the form below and our team will get back to you 
-          within 24 hours with a detailed quote. Quote requests are sent to elvin.hatamov@outlook.com.
-        </p>
 
         {['localhost', '127.0.0.1'].includes(window.location.hostname) && (
           <p className="quote-intro">
@@ -162,6 +158,8 @@ const QuoteForm = () => {
           <form
             className="quote-form"
             name="quote-request"
+            method="POST"
+            action="/"
             data-netlify="true"
             netlify-honeypot="bot-field"
             onSubmit={handleSubmit}
