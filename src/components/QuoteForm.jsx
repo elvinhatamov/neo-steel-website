@@ -16,6 +16,24 @@ const QuoteForm = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState('');
+  const isLocalhost = ['localhost', '127.0.0.1'].includes(window.location.hostname);
+
+  const resetFormAfterSuccess = () => {
+    setIsSubmitted(true);
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      company: '',
+      projectType: '',
+      description: '',
+      timeline: ''
+    });
+
+    setTimeout(() => {
+      setIsSubmitted(false);
+    }, 3000);
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -74,24 +92,8 @@ const QuoteForm = () => {
       setIsSubmitting(true);
 
       try {
-        const isLocalhost = ['localhost', '127.0.0.1'].includes(window.location.hostname);
-
         if (isLocalhost) {
-          setIsSubmitted(true);
-          setFormData({
-            name: '',
-            email: '',
-            phone: '',
-            company: '',
-            projectType: '',
-            description: '',
-            timeline: ''
-          });
-
-          setTimeout(() => {
-            setIsSubmitted(false);
-          }, 3000);
-
+          resetFormAfterSuccess();
           setIsSubmitting(false);
           return;
         }
@@ -109,26 +111,37 @@ const QuoteForm = () => {
           body: payload
         });
 
-        if (!response.ok) {
-          throw new Error('Failed to submit form');
+        if (response.ok) {
+          resetFormAfterSuccess();
+          return;
         }
 
-        setIsSubmitted(true);
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          company: '',
-          projectType: '',
-          description: '',
-          timeline: ''
+        const fallbackResponse = await fetch('https://formsubmit.co/ajax/elvin.hatamov@outlook.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json'
+          },
+          body: JSON.stringify({
+            _subject: `Quote Request - ${formData.projectType || 'General Inquiry'}`,
+            _captcha: 'false',
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone,
+            company: formData.company || 'N/A',
+            projectType: formData.projectType,
+            timeline: formData.timeline,
+            description: formData.description
+          })
         });
 
-        setTimeout(() => {
-          setIsSubmitted(false);
-        }, 3000);
+        if (!fallbackResponse.ok) {
+          throw new Error('Failed to submit via fallback provider');
+        }
+
+        resetFormAfterSuccess();
       } catch (error) {
-        setSubmitError('Submission failed. Please try again or email elvin.hatamov@outlook.com directly.');
+        setSubmitError('Submission failed. Please try again in 1 minute.');
       } finally {
         setIsSubmitting(false);
       }
