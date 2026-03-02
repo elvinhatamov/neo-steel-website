@@ -14,6 +14,8 @@ const QuoteForm = () => {
 
   const [errors, setErrors] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -62,32 +64,56 @@ const QuoteForm = () => {
     return newErrors;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
     const newErrors = validateForm();
     
     if (Object.keys(newErrors).length === 0) {
-      const recipients = 'info@neosteel.ca,estimating@neosteel.ca';
-      const subject = `Quote Request - ${formData.projectType || 'General Inquiry'}`;
-      const body = [
-        `Full Name: ${formData.name}`,
-        `Email: ${formData.email}`,
-        `Phone: ${formData.phone}`,
-        `Company: ${formData.company || 'N/A'}`,
-        `Project Type: ${formData.projectType}`,
-        `Timeline: ${formData.timeline}`,
-        '',
-        'Project Description:',
-        formData.description
-      ].join('\n');
+      setSubmitError('');
+      setIsSubmitting(true);
 
-      window.location.href = `mailto:${recipients}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      try {
+        const isLocalhost = ['localhost', '127.0.0.1'].includes(window.location.hostname);
 
-      setIsSubmitted(true);
-      
-      // Reset form after 3 seconds
-      setTimeout(() => {
+        if (isLocalhost) {
+          setIsSubmitted(true);
+          setFormData({
+            name: '',
+            email: '',
+            phone: '',
+            company: '',
+            projectType: '',
+            description: '',
+            timeline: ''
+          });
+
+          setTimeout(() => {
+            setIsSubmitted(false);
+          }, 3000);
+
+          setIsSubmitting(false);
+          return;
+        }
+
+        const payload = new URLSearchParams({
+          'form-name': 'quote-request',
+          ...formData
+        }).toString();
+
+        const response = await fetch('/', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          },
+          body: payload
+        });
+
+        if (!response.ok) {
+          throw new Error('Failed to submit form');
+        }
+
+        setIsSubmitted(true);
         setFormData({
           name: '',
           email: '',
@@ -97,8 +123,15 @@ const QuoteForm = () => {
           description: '',
           timeline: ''
         });
-        setIsSubmitted(false);
-      }, 3000);
+
+        setTimeout(() => {
+          setIsSubmitted(false);
+        }, 3000);
+      } catch (error) {
+        setSubmitError('Submission failed. Please try again or email elvin.hatamov@outlook.com directly.');
+      } finally {
+        setIsSubmitting(false);
+      }
     } else {
       setErrors(newErrors);
     }
@@ -110,8 +143,14 @@ const QuoteForm = () => {
         <h2 className="section-title">Get a Quote</h2>
         <p className="quote-intro">
           Ready to start your project? Fill out the form below and our team will get back to you 
-          within 24 hours with a detailed quote. Quote requests are sent to info@neosteel.ca and estimating@neosteel.ca.
+          within 24 hours with a detailed quote. Quote requests are sent to elvin.hatamov@outlook.com.
         </p>
+
+        {['localhost', '127.0.0.1'].includes(window.location.hostname) && (
+          <p className="quote-intro">
+            Local test mode: submissions are simulated on localhost. Deploy to Netlify to send real emails.
+          </p>
+        )}
 
         {isSubmitted ? (
           <div className="success-message">
@@ -120,7 +159,15 @@ const QuoteForm = () => {
             <p>Your quote request has been submitted. We'll contact you shortly.</p>
           </div>
         ) : (
-          <form className="quote-form" onSubmit={handleSubmit}>
+          <form
+            className="quote-form"
+            name="quote-request"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            onSubmit={handleSubmit}
+          >
+            <input type="hidden" name="form-name" value="quote-request" />
+            <input type="hidden" name="bot-field" />
             <div className="form-row">
               <div className="form-group">
                 <label htmlFor="name">Full Name *</label>
@@ -231,8 +278,10 @@ const QuoteForm = () => {
               {errors.description && <span className="error-message">{errors.description}</span>}
             </div>
 
-            <button type="submit" className="btn btn-primary submit-btn">
-              Submit Quote Request
+            {submitError && <span className="error-message">{submitError}</span>}
+
+            <button type="submit" className="btn btn-primary submit-btn" disabled={isSubmitting}>
+              {isSubmitting ? 'Submitting...' : 'Submit Quote Request'}
             </button>
           </form>
         )}
