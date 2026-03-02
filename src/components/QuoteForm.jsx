@@ -80,11 +80,12 @@ const QuoteForm = () => {
 
         <form
           className="quote-form"
-          action="https://formsubmit.co/elvin.hatamov@outlook.com"
+          action="https://formsubmit.co/info@neosteel.ca"
           method="POST"
           onSubmit={handleSubmit}
         >
             <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_cc" value="estimating@neosteel.ca" />
             <input type="hidden" name="_subject" value={`Quote Request - ${formData.projectType || 'General Inquiry'}`} />
             <input type="hidden" name="_template" value="table" />
             <div className="form-row">

@@ -14,7 +14,8 @@ const Contact = () => {
       icon: <FaEnvelope />,
       title: "Email",
       details: [
-        <a href="mailto:elvin.hatamov@outlook.com">elvin.hatamov@outlook.com</a>
+        <a href="mailto:info@neosteel.ca">info@neosteel.ca</a>,
+        <a href="mailto:estimating@neosteel.ca">estimating@neosteel.ca</a>
       ]
     },
     {

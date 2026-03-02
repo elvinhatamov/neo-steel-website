@@ -60,7 +60,8 @@ const Footer = () => {
                 <li>3640 Weston Road #8</li>
                 <li>North York, ON M9L 1W2</li>
                 <li>Phone: <a href="tel:+14165097711">(416) 509-7711</a></li>
-                <li>Email: <a href="mailto:elvin.hatamov@outlook.com">elvin.hatamov@outlook.com</a></li>
+                <li>Email: <a href="mailto:info@neosteel.ca">info@neosteel.ca</a></li>
+                <li>Email: <a href="mailto:estimating@neosteel.ca">estimating@neosteel.ca</a></li>
               </ul>
             </div>
           </div>
