@@ -13,27 +13,6 @@ const QuoteForm = () => {
   });
 
   const [errors, setErrors] = useState({});
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitError, setSubmitError] = useState('');
-  const isLocalhost = ['localhost', '127.0.0.1'].includes(window.location.hostname);
-
-  const resetFormAfterSuccess = () => {
-    setIsSubmitted(true);
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      company: '',
-      projectType: '',
-      description: '',
-      timeline: ''
-    });
-
-    setTimeout(() => {
-      setIsSubmitted(false);
-    }, 3000);
-  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -82,69 +61,13 @@ const QuoteForm = () => {
     return newErrors;
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     
     const newErrors = validateForm();
     
     if (Object.keys(newErrors).length === 0) {
-      setSubmitError('');
-      setIsSubmitting(true);
-
-      try {
-        if (isLocalhost) {
-          resetFormAfterSuccess();
-          setIsSubmitting(false);
-          return;
-        }
-
-        const payload = new URLSearchParams({
-          'form-name': 'quote-request',
-          ...formData
-        }).toString();
-
-        const response = await fetch('/', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
-          },
-          body: payload
-        });
-
-        if (response.ok) {
-          resetFormAfterSuccess();
-          return;
-        }
-
-        const fallbackResponse = await fetch('https://formsubmit.co/ajax/elvin.hatamov@outlook.com', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            Accept: 'application/json'
-          },
-          body: JSON.stringify({
-            _subject: `Quote Request - ${formData.projectType || 'General Inquiry'}`,
-            _captcha: 'false',
-            name: formData.name,
-            email: formData.email,
-            phone: formData.phone,
-            company: formData.company || 'N/A',
-            projectType: formData.projectType,
-            timeline: formData.timeline,
-            description: formData.description
-          })
-        });
-
-        if (!fallbackResponse.ok) {
-          throw new Error('Failed to submit via fallback provider');
-        }
-
-        resetFormAfterSuccess();
-      } catch (error) {
-        setSubmitError('Submission failed. Please try again in 1 minute.');
-      } finally {
-        setIsSubmitting(false);
-      }
+      e.currentTarget.submit();
     } else {
       setErrors(newErrors);
     }
@@ -155,30 +78,15 @@ const QuoteForm = () => {
       <div className="container">
         <h2 className="section-title">Get a Quote</h2>
 
-        {['localhost', '127.0.0.1'].includes(window.location.hostname) && (
-          <p className="quote-intro">
-            Local test mode: submissions are simulated on localhost. Deploy to Netlify to send real emails.
-          </p>
-        )}
-
-        {isSubmitted ? (
-          <div className="success-message">
-            <div className="success-icon">✓</div>
-            <h3>Thank You!</h3>
-            <p>Your quote request has been submitted. We'll contact you shortly.</p>
-          </div>
-        ) : (
-          <form
-            className="quote-form"
-            name="quote-request"
-            method="POST"
-            action="/"
-            data-netlify="true"
-            netlify-honeypot="bot-field"
-            onSubmit={handleSubmit}
-          >
-            <input type="hidden" name="form-name" value="quote-request" />
-            <input type="hidden" name="bot-field" />
+        <form
+          className="quote-form"
+          action="https://formsubmit.co/elvin.hatamov@outlook.com"
+          method="POST"
+          onSubmit={handleSubmit}
+        >
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_subject" value={`Quote Request - ${formData.projectType || 'General Inquiry'}`} />
+            <input type="hidden" name="_template" value="table" />
             <div className="form-row">
               <div className="form-group">
                 <label htmlFor="name">Full Name *</label>
@@ -289,13 +197,10 @@ const QuoteForm = () => {
               {errors.description && <span className="error-message">{errors.description}</span>}
             </div>
 
-            {submitError && <span className="error-message">{submitError}</span>}
-
-            <button type="submit" className="btn btn-primary submit-btn" disabled={isSubmitting}>
-              {isSubmitting ? 'Submitting...' : 'Submit Quote Request'}
+            <button type="submit" className="btn btn-primary submit-btn">
+              Submit Quote Request
             </button>
           </form>
-        )}
       </div>
     </section>
   );
